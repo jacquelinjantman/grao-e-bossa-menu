@@ -1,10 +1,9 @@
-\---
+---
 const { nombre, descripcion, precio } = Astro.props;
 const precioNumerico = Number(precio);
 const precioFormateado = precioNumerico.toFixed(2).replace(".", ",");
-
-
 ---
+
 <article class="card">
   <div class="card__linea">
     <span class="card__nombre">{nombre}</span>
@@ -32,12 +31,14 @@ const precioFormateado = precioNumerico.toFixed(2).replace(".", ",");
     font-size: 1.05rem;
     color: var(--coffee);
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .card__leader {
     flex: 1;
     border-bottom: 2px dotted rgba(43, 27, 20, 0.25);
     height: 0.5em;
+    min-width: 0.5rem;
   }
 
   .card__precio {
