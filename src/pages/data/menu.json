@@ -1,0 +1,57 @@
+{
+  "negocio": {
+    "nombre": "Grão & Bossa",
+    "tagline": "Café de origem, torra artesanal"
+  },
+  "categorias": [
+    {
+      "nombre": "Especiais",
+      "productos": [
+        { "nombre": "Espresso Tradicional", "descripcion": "Grão 100% arábica, torra média", "precio": 7.00 },
+        { "nombre": "Espresso Duplo", "descripcion": "Dose dupla, encorpado", "precio": 9.50 },
+        { "nombre": "Coado na Hora (V60)", "descripcion": "Método filtrado, notas frutadas", "precio": 12.00 },
+        { "nombre": "Prensa Francesa", "descripcion": "Extração lenta, corpo intenso", "precio": 13.00 }
+      ]
+    },
+    {
+      "nombre": "Com Leite",
+      "productos": [
+        { "nombre": "Cappuccino", "descripcion": "Espresso, leite vaporizado, espuma cremosa", "precio": 11.00 },
+        { "nombre": "Café com Leite", "descripcion": "Clássico, meio a meio", "precio": 8.00 },
+        { "nombre": "Latte Baunilha", "descripcion": "Espresso, leite, xarope de baunilha", "precio": 13.50 }
+      ]
+    },
+    {
+      "nombre": "Gelados",
+      "productos": [
+        { "nombre": "Cold Brew", "descripcion": "Extração a frio, 12h de infusão", "precio": 12.00 },
+        { "nombre": "Affogato", "descripcion": "Espresso quente sobre sorvete de creme", "precio": 15.00 }
+      ]
+    },
+    {
+        "nombre": "Croissant",
+        "productos": 
+        [
+          {"nombre": "croissant tradicional frances", "descripcion": "massa folhada deixa o paozinho bem crocante", "precio":14.00},
+          {"nombre" : "chocolate", "descripcion":"Com massa folhada leve e crocante, cada croissant é recheado com chocolate cremoso", "precio":16.00}
+        ]
+    },
+    {
+        "nombre" : "cookies",
+        "productos":
+        [
+            {"nombre":"chocolate chip", "descripcion": "Massa de baunilha com gotas de chocolate.", "precio": 10.00 },
+            {"nombre": "Snickerdoodles", "descripcion": "Cookies amanteigados passados no açúcar e canela.", "precio": 11.00}
+        ]
+    },
+    {
+        "nombre": "Sucos",
+        "productos":
+        [
+            {"nombre": "Morango", "descripcion": "Encorpado, doce e com textura aveludada.", "precio": 14.00},
+            {"nombre": "Abacaxi", "descripcion":"Doce e levemente ácido, ótimo para digestão.", "precio":15.00},
+            {"nombre":"Laranja", "descripcion":"rico em vitamina C.", "precio":"8.00"}
+        ]
+    }
+  ]
+}

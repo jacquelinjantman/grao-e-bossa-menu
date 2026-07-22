@@ -1,17 +1,53 @@
 ---
+import { isTemplateExpression } from "typescript";
+import Header from "./components/headers.astro";
+import ProductCard from "./components/productCard.astro";
+import Layouts from "./layouts/base.astro";
+import Menu from "./data/menu.json";
+import WhatsAppButton from "./components/Wtsp.astro";
+
 
 ---
+ 
+<Layouts title={Menu.negocio.nombre}>
+  <Header nombre={Menu.negocio.nombre} tagline={Menu.negocio.tagline} />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <main class="Menu">
+    <WhatsAppButton numero="5511999999999" mensaje="Olá! Gostaria de ver o cardápio." />
+    {Menu.categorias.map((categoria) => (
+      <section class="categoria">
+        <h2 class="categoria__titulo">{categoria.nombre}</h2>
+        {categoria.productos.map((producto) => (
+          <ProductCard
+            nombre={producto.nombre}
+            descripcion={producto.descripcion}
+            precio={producto.precio}
+          />
+        ))}
+      </section>
+    ))}
+  </main>
+</Layouts>
+
+<style>
+  .menu {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+
+  .categoria {
+    margin-bottom: 2.5rem;
+  }
+
+  .categoria__titulo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--sage);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+</style>
