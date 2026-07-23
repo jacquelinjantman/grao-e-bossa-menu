@@ -1,0 +1,49 @@
+---
+const {texto, href, subtexto, externo = false } = Astro.props;
+
+---
+
+<a
+href={href}
+class="hub-btn"
+target={externo ? "_blank" : undefined}
+rel={externo ? "noopener noreferrer" : undefined}
+>
+
+<span class="hub-btn__texto">{texto}</span>
+  {subtexto && <span class="hub-btn__subtexto">{subtexto}</span>}
+</a>
+
+<style>
+  .hub-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 1.1rem 1.5rem;
+    background: var(--caramel);
+    border: 2px solid var(--coffee);
+    border-radius: 0.9rem;
+    box-shadow: 4px 4px 0 var(--coffee);
+    text-decoration: none;
+    color: var(--coffee);
+    font-family: var(--font-body);
+    font-weight: 500;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .hub-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--coffee);
+  }
+
+  .hub-btn__texto {
+    font-size: 1.05rem;
+  }
+
+  .hub-btn__subtexto {
+    font-size: 0.8rem;
+    opacity: 0.75;
+  }
+</style>

@@ -1,53 +1,53 @@
 ---
-import { isTemplateExpression } from "typescript";
-import Header from "./components/headers.astro";
-import ProductCard from "./components/productCard.astro";
-import Layouts from "./layouts/base.astro";
-import Menu from "./data/menu.json";
-import WhatsAppButton from "./components/Wtsp.astro";
+import Base from './layouts/base.astro';
+import Header from './components/headers.astro';
+import HubButton from './components/HubButton.astro';
+import menu from './data/menu.json';
 
-
+const { nombre, tagline, whatsapp, instagramUrl, reviewsUrl, mapsUrl } = menu.negocio;
+const whatsappLink = `https://wa.me/${whatsapp}?text=${encodeURIComponent("Olá! Vim pelo link do cardápio.")}`;
 ---
- 
-<Layouts title={Menu.negocio.nombre}>
-  <Header nombre={Menu.negocio.nombre} tagline={Menu.negocio.tagline} />
+<Base title={nombre}>
+  <div class="hub">
+    <div class="hub__avatar">☕</div>
+    <Header nombre={nombre} tagline={tagline} />
 
-  <main class="Menu">
-    <WhatsAppButton numero="5511999999999" mensaje="Olá! Gostaria de ver o cardápio." />
-    {Menu.categorias.map((categoria) => (
-      <section class="categoria">
-        <h2 class="categoria__titulo">{categoria.nombre}</h2>
-        {categoria.productos.map((producto) => (
-          <ProductCard
-            nombre={producto.nombre}
-            descripcion={producto.descripcion}
-            precio={producto.precio}
-          />
-        ))}
-      </section>
-    ))}
-  </main>
-</Layouts>
+    <nav class="hub__botones">
+      <HubButton texto="Cardápio" href="/cardapio" />
+      <HubButton texto="WhatsApp" href={whatsappLink} externo={true} />
+      <HubButton texto="Nos avalie ⭐" subtexto="Google Reviews" href={reviewsUrl} externo={true} />
+      <HubButton texto="Localização" subtexto="Ver no mapa" href={mapsUrl} externo={true} />
+    </nav>
+  </div>
+</Base>
 
 <style>
-  .menu {
-    max-width: 600px;
+  .hub {
+    max-width: 420px;
     margin: 0 auto;
-    padding: 0 1.5rem 3rem;
+    padding: 2rem 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .categoria {
-    margin-bottom: 2.5rem;
+  .hub__avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
   }
 
-  .categoria__titulo {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--sage);
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 2px solid var(--gold);
-    display: inline-block;
+  .hub__botones {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
   }
 </style>

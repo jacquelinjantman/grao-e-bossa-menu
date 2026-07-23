@@ -1,7 +1,11 @@
 {
   "negocio": {
     "nombre": "Grão & Bossa",
-    "tagline": "Café de origem, torra artesanal"
+    "tagline": "Café de origem, torra artesanal",
+     "whatsapp": "5511999999999",
+    "instagramUrl": "https://instagram.com/graoebossa",
+    "reviewsUrl": "https://g.page/r/exemplo/review",
+    "mapsUrl": "https://maps.app.goo.gl/exemplo"
   },
   "categorias": [
     {
